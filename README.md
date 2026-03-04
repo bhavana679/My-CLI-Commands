@@ -1,77 +1,75 @@
 # My CLI Commands 🚀
 
-A modular, engine-driven Command Line Interface (CLI) built with TypeScript. This project provides a variety of useful and fun commands, ranging from math utilities to real-time weather reports and jokes.
+A modular, engine-driven Command Line Interface (CLI) built with TypeScript. This project is designed to be installed and run globally as the `mycli` command.
 
-## 🏃 Quick Start: How to Run
+---
 
-To get your CLI up and running immediately, follow these exact steps in your terminal:
+## ⚡ How to Run with `mycli`
 
-### 1. **Install Dependencies**
-First, make sure all necessary libraries are installed:
+To use this program as a global command on your system, follow these steps:
+
+### 1. **Setup & Build**
+Install all dependencies and compile the TypeScript source code:
 ```bash
 npm install
-```
-
-### 2. **Build the Project**
-Compile the TypeScript code into JavaScript:
-```bash
 npm run build
 ```
 
-### 3. **Link Globally (Recommended)**
-This allows you to use the `mycli` command from anywhere:
+### 2. **Install Globally**
+Link the project to your global `node_modules` so you can use the `mycli` command from any folder:
 ```bash
 npm link --force
 ```
 
-### 4. **Run a Command!**
-Now you can start using the CLI:
+### 3. **Run Your Commands!**
+Now, simply type `mycli` followed by any command:
 ```bash
-mycli --help
-mycli weather
-mycli joke
+mycli joke        # Get a random joke
+mycli weather     # Get a weather report
+mycli add 10 20   # Add two numbers
+mycli --help      # See all available commands
 ```
 
 ---
 
-## 🛠 Features
+## 🛠 Available Commands
 
 Our CLI is broken down into several modular categories:
 
-### 🧮 Math Commands
-- `add <n1> <n2>`: Add two numbers.
-- `sub <n1> <n2>`: Subtract two numbers.
-- `mul <n1> <n2>`: Multiply two numbers.
-- `div <n1> <n2>`: Divide two numbers.
+### 🧮 Math Utilities
+- `mycli add <n1> <n2>`: Add two numbers.
+- `mycli sub <n1> <n2>`: Subtract two numbers.
+- `mycli mul <n1> <n2>`: Multiply two numbers.
+- `mycli div <n1> <n2>`: Divide two numbers.
 
-### 🎭 Fun Commands
-- `joke`: Get a random programming or general joke.
-- `quote`: Get an inspirational daily quote.
-- `pokemon`: Get stats for a random Pokemon (e.g., Pikachu).
+### 🎭 Fun & Entertainment
+- `mycli joke`: Get a random programming or general joke.
+- `mycli quote`: Get an inspirational daily quote.
+- `mycli pokemon`: Get stats for a random Pokemon.
 
-### 🌍 Utility Commands
-- `weather`: Real-time weather report (Temperature, Wind Speed, etc.).
-- `country`: Get information about a specific country (e.g., India).
-- `greet <name>`: A friendly greeting command.
-- `init_ts <folderName>`: Automatically initialize a new TypeScript project.
+### 🌍 World Utilities
+- `mycli weather`: Real-time weather report.
+- `mycli country`: Get information about a country.
+- `mycli greet <name>`: A friendly greeting.
+- `mycli init_ts <folder>`: Initialize a new TypeScript project.
 
 ---
 
 ## 🏗 Modular Architecture
 
-The project uses a custom-built **CLI Engine** for scalable command registration. 
+The project uses a custom **CLI Engine** for scalable command registration. Every folder and file is structured to be independent and easy to extend.
 
-- **`cli_engine/`**: Core registration logic.
-- **`commands/`**: Modular command classes.
-- **`cli.ts`**: Main orchestrator.
+- **`cli_engine/`**: Core logic for dynamic command registration.
+- **`commands/`**: Modular command classes (each command is its own file).
+- **`cli.ts`**: The main orchestrator that powers the `mycli` entry point.
 
 ---
 
 ## 📦 Tech Stack
 - **TypeScript**: Robust, type-safe development.
-- **Commander.js**: CLI framework.
-- **Axios**: API requests.
-- **Chalk**: Colorful terminal experience.
+- **Commander.js**: Powering the CLI interface.
+- **Axios**: API integration for real-time data.
+- **Chalk**: Beautiful, colorful terminal output.
 
 ---
 *Developed with ❤️ by Bhavana*
