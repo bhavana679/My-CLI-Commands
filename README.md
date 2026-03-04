@@ -1,75 +1,47 @@
-# My CLI Commands
+# my-cli-commands
 
-A modular, engine-driven Command Line Interface (CLI) built with TypeScript. This project is designed to be installed and run globally as the mycli command.
+A simple, modular CLI tool built with TypeScript.
 
----
+### getting started
 
-## How to Run with mycli
+To use `mycli` globally on your machine:
 
-To use this program as a global command on your system, follow these steps:
+1. `npm install`
+2. `npm run build`
+3. `npm link --force`
 
-### 1. Setup & Build
-Install all dependencies and compile the TypeScript source code:
-```bash
-npm install
-npm run build
-```
+Now you can just run `mycli` from any folder.
 
-### 2. Install Globally
-Link the project to your global node_modules so you can use the mycli command from any folder:
-```bash
-npm link --force
-```
+### available commands
 
-### 3. Run Your Commands!
-Now, simply type mycli followed by any command:
-```bash
-mycli joke        # Get a random joke
-mycli weather     # Get a weather report
-mycli add 10 20   # Add two numbers
-mycli --help      # See all available commands
-```
+**math**
+- `mycli add <n1> <n2>`
+- `mycli sub <n1> <n2>`
+- `mycli mul <n1> <n2>`
+- `mycli div <n1> <n2>`
 
----
+**other stuff**
+- `mycli joke` - random joke
+- `mycli quote` - daily quote
+- `mycli pokemon` - get pikachu stats
+- `mycli weather` - current weather
+- `mycli country` - country info
+- `mycli greet <name>` - say hi
+- `mycli init_ts <folder>` - setup a new ts project
 
-## Available Commands
+### how it works
 
-Our CLI is broken down into several modular categories:
+The project is modular. Every command is a separate file in `/commands`. The `cli_engine` handles registration automatically.
 
-### Math Utilities
-- mycli add <n1> <n2>: Add two numbers.
-- mycli sub <n1> <n2>: Subtract two numbers.
-- mycli mul <n1> <n2>: Multiply two numbers.
-- mycli div <n1> <n2>: Divide two numbers.
+- `cli.ts` - main entry point
+- `cli_engine/` - core registration engine
+- `commands/` - command logic
 
-### Fun & Entertainment
-- mycli joke: Get a random programming or general joke.
-- mycli quote: Get an inspirational daily quote.
-- mycli pokemon: Get stats for a random Pokemon.
+### setup
 
-### World Utilities
-- mycli weather: Real-time weather report.
-- mycli country: Get information about a country.
-- mycli greet <name>: A friendly greeting.
-- mycli init_ts <folder>: Initialize a new TypeScript project.
+- typescript
+- commander
+- axios
+- chalk
 
----
-
-## Modular Architecture
-
-The project uses a custom CLI Engine for scalable command registration. Every folder and file is structured to be independent and easy to extend.
-
-- cli_engine/: Core logic for dynamic command registration.
-- commands/: Modular command classes (each command is its own file).
-- cli.ts: The main orchestrator that powers the mycli entry point.
-
----
-
-## Tech Stack
-- TypeScript: Robust, type-safe development.
-- Commander.js: Powering the CLI interface.
-- Axios: API integration for real-time data.
-- Chalk: Beautiful, colorful terminal output.
-
----
-*Developed by Bhavana*
+by bhavana
