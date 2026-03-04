@@ -1,45 +1,37 @@
-#!/usr/bin/env node 
+#!/usr/bin/env node
 
-import axios from "axios"
+const CLI_Engine = require("./cli_engine/engine");
 
-const { Command } = require("commander")
+// Import all command classes
+const AddCommand = require("./commands/addCommand");
+const SubCommand = require("./commands/subCommand");
+const MulCommand = require("./commands/mulCommand");
+const DivCommand = require("./commands/divCommand");
+const Greet_Command = require("./commands/greetCommand");
+const JokeCommand = require("./commands/jokeCommand");
+const QuoteCommand = require("./commands/quoteCommand");
+const WeatherCommand = require("./commands/weatherCommand");
+const CountryCommand = require("./commands/countryCommand");
+const PokemonCommand = require("./commands/pokemonCommand");
+const Init_TS = require("./commands/initTS");
 
-const program = new Command ()
+// Initialize the engine
+const engine = new CLI_Engine();
 
-program  
-.command("greet <name>") 
-.action((name)=>{console.log(`Hello ${name}`)})
+// Register all commands
+engine.registerCommands([
+    Greet_Command,
+    AddCommand,
+    SubCommand,
+    MulCommand,
+    DivCommand,
+    JokeCommand,
+    QuoteCommand,
+    WeatherCommand,
+    CountryCommand,
+    PokemonCommand,
+    Init_TS
+]);
 
-program 
-.command("add <n1> <n2>")
-.action((n1,n2)=>{console.log(Number(n1)+Number(n2))}) 
-
-program 
-.command("sub <n1> <n2>")
-.action((n1,n2)=>{console.log(Number(n1)-Number(n2))})  
-
-program 
-.command("mul <n1> <n2>")
-.action((n1,n2)=>{console.log(Number(n1)*Number(n2))})  
-
-program 
-.command("div <n1> <n2>")
-.action((n1,n2)=>{console.log(Number(n1)/Number(n2))}) 
-
-program 
-.command("joke") 
-.description("Random Joke")
-.action(async ()=>{
-    try {
-        const res = await axios.get("https://official-joke-api.appspot.com/random_joke")
-        console.log(res.data.setup)
-        console.log(res.data.punchline)
-    }catch(err){
-        console.log(err)
-    }
-})
-
-program.parse() 
-
-
-
+// Run the CLI
+engine.run();
