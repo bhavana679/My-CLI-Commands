@@ -2,6 +2,38 @@
 
 A modular, engine-driven Command Line Interface (CLI) built with TypeScript. This project provides a variety of useful and fun commands, ranging from math utilities to real-time weather reports and jokes.
 
+## 🏃 Quick Start: How to Run
+
+To get your CLI up and running immediately, follow these exact steps in your terminal:
+
+### 1. **Install Dependencies**
+First, make sure all necessary libraries are installed:
+```bash
+npm install
+```
+
+### 2. **Build the Project**
+Compile the TypeScript code into JavaScript:
+```bash
+npm run build
+```
+
+### 3. **Link Globally (Recommended)**
+This allows you to use the `mycli` command from anywhere:
+```bash
+npm link --force
+```
+
+### 4. **Run a Command!**
+Now you can start using the CLI:
+```bash
+mycli --help
+mycli weather
+mycli joke
+```
+
+---
+
 ## 🛠 Features
 
 Our CLI is broken down into several modular categories:
@@ -21,7 +53,7 @@ Our CLI is broken down into several modular categories:
 - `weather`: Real-time weather report (Temperature, Wind Speed, etc.).
 - `country`: Get information about a specific country (e.g., India).
 - `greet <name>`: A friendly greeting command.
-- `init_ts <folderName>`: Automatically initialize a new TypeScript project with all necessary dependencies and configuration.
+- `init_ts <folderName>`: Automatically initialize a new TypeScript project.
 
 ---
 
@@ -29,57 +61,17 @@ Our CLI is broken down into several modular categories:
 
 The project uses a custom-built **CLI Engine** for scalable command registration. 
 
-- **`cli_engine/`**: Contains the core logic that dynamically loads and registers commands.
-- **`commands/`**: Every command is its own class in its own file, making it extremely easy to add new features without breaking existing ones.
-- **`cli.ts`**: The main entry point that orchestrates the engine and user inputs.
-
----
-
-## 🚀 Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/bhavana679/My-CLI-Commands.git
-   cd My-CLI-Commands
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Build the project:**
-   ```bash
-   npm run build
-   ```
-
-4. **Link the CLI globally (Optional):**
-   ```bash
-   npm link
-   ```
-
----
-
-## 💡 How to Run
-
-If you have linked the project, you can run commands directly using:
-```bash
-mycli <command_name>
-```
-
-Alternatively, you can run it using `ts-node`:
-```bash
-npx ts-node cli.ts <command_name>
-```
+- **`cli_engine/`**: Core registration logic.
+- **`commands/`**: Modular command classes.
+- **`cli.ts`**: Main orchestrator.
 
 ---
 
 ## 📦 Tech Stack
-- **TypeScript**: For robust and type-safe development.
-- **Commander.js**: The industry standard for building CLI tools.
-- **Axios**: For making API requests to fetch weather, jokes, and quotes.
-- **Chalk**: For beautiful, colorful terminal output.
-- **Node.js**: The runtime environment.
+- **TypeScript**: Robust, type-safe development.
+- **Commander.js**: CLI framework.
+- **Axios**: API requests.
+- **Chalk**: Colorful terminal experience.
 
 ---
 *Developed with ❤️ by Bhavana*
